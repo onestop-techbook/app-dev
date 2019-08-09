@@ -16,7 +16,7 @@
   "texstyle": ["reviewmacro"],
   "texdocumentclass": [
     "review-jsbook",
-    "media=print,paper=b5,serial_pagination=true,hiddenfolio=nikko-pc,openany,fontsize=10pt,baselineskip=15.4pt,line_length=40zw,number_of_lines=35,head_space=30mm,headsep=10mm,headheight=5mm,footskip=10mm"
+    "media=ebook,paper=b5,serial_pagination=true,hiddenfolio=nikko-pc,openany,fontsize=10pt,baselineskip=15.4pt,line_length=40zw,number_of_lines=35,head_space=30mm,headsep=10mm,headheight=5mm,footskip=10mm"
   ],
   "sty_templates": {
     "url": "https://github.com/TechBooster/ReVIEW-Template/archive/2cde584d33e8a6f5e6cf647e62fb6b3123ce4dfa.zip",
@@ -25,11 +25,7 @@
   "templates": ["images"],
   "catalog": {
     "PREDEF": ["preface.re"],
-    "CHAPS": [
-      "chap-placeholder.md",
-      "chap-software-design.md",
-      "chap-ui-design.md"
-    ],
+    "CHAPS": ["chap-placeholder.md", "chap-software-design.md", "chap-ui-design.md"],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
 }
