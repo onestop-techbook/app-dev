@@ -1,0 +1,12 @@
+{
+  "name": "app-dev",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "easybooks": "^0.1.8"
+  },
+  "scripts": {
+    "clean": "rm -rf .review",
+    "build": "easybooks app-dev.json"
+  }
+}
