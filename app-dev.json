@@ -25,12 +25,7 @@
   "templates": ["images"],
   "catalog": {
     "PREDEF": ["preface.re"],
-    "CHAPS": [
-      "chap-easybooks.md",
-      "chap-placeholder.md",
-      "chap-software-design.md",
-      "chap-ui-design.md"
-    ],
+    "CHAPS": ["chap-easybooks.md", "chap-placeholder.md", "chap-technique.md"],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
 }
