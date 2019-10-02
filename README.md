@@ -97,12 +97,25 @@ tarで固めたpdfがダウンロードできます。
 https://qiita.com/implicit_none/items/398c6e0bbedc8b160621
 暗黙の型宣言さんが詳しく書いてくれてます。あるいは、技術同人誌を書こう‐アウトプットのススメ‐をご覧ください。
 
+Windows10(Home/Pro問わず)であれば、WSL＋docker越しにRe:VIWEを扱う方法もあります。
+<!--
+当方(ほしまど)のQiita記事を案内するか？ https://qiita.com/hoshimado/items/7592cee28c1bde545b78
+-->
+※2019/10/01時点で、次の環境にて後述のdockerコマンドからコンパイル出来ることを確認済み。
+<!-- (3.1指定は、2.x環境と共存のため) -->
+
+* Microsoft Windows 10 Home Version 1903 
+* Ubuntu 16.01
+* Docker version 17.03.2-ce, build f5ec1e2
+* Docker image : vvakame/review (tag:3.1)
+
+
 ### Dockerを使う方法
 
 Dockerを使うのが一番手軽です。
 
 ```sh
-$ docker run --rm -v `pwd`:/work vvakame/review /bin/sh -c "cd /work/articles ; review-pdfmaker config.yml"
+$ docker run -t --rm -v $(pwd):/book vvakame/review:3.1 /bin/bash -ci "cd /book && yarn && yarn build"
 ```
 
 ### Docker使わずビルド
