@@ -30,7 +30,8 @@
       "chap-placeholder.md",
       "chap-technique.md",
       "chap-coding.md",
-      "chap-testing.md"
+      "chap-testing.md",
+      "chap-makesmallappforme.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
