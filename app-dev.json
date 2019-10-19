@@ -27,7 +27,6 @@
     "PREDEF": ["preface.re"],
     "CHAPS": [
       "chap-easybooks.md",
-      "chap-placeholder.md",
       "chap-technique.md",
       "chap-coding.md",
       "chap-testing.md",

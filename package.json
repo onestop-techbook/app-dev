@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "easybooks": "^0.1.9"
+    "easybooks": "0.1.25"
   },
   "scripts": {
     "clean": "rm -rf .review",
