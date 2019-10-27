@@ -4,7 +4,7 @@
 
 Capistranoとはローカルで制作したアプリケーションを、自動で本番環境にサーバにデプロイするツールのことです。アプリケーションは製作するだけではなく、それを本番環境に上げるのも一苦労です。手動でおこなえばミスも発生しやすくなりますし、また本番環境でアプリケーションが起動中にバージョンアップしたものをそのままアップしようとすれば、システムにも影響が出ます。それをなくし、コマンド一発でデプロイ及び更新を可能にするのが、このCapistranoです。
 
-[![Image from Gyazo](https://i.gyazo.com/047f1542ecf9d450de86e9950efba033.png)](https://gyazo.com/047f1542ecf9d450de86e9950efba033)
+![fig1](fig1)
 
 CapistranoはRubyで記述されており、同じくRubyで作られたRuby on Railsでもよく使われます。Rubyで記述されているものの、PHPのような他の言語で記述されたアプリケーションのデプロイでも使用できます。
 
@@ -24,7 +24,7 @@ Capistranoを使用する流れは以下の通りです。
   - ローカル側、サーバ側ともにrbenv、rubyあり。
   - ローカルからサーバへのSSH接続及びローカルからGithubへのSSH接続済み。
 
-[![Image from Gyazo](https://i.gyazo.com/677b89c35367ad5b9c75fa2c3bbb7dcd.png)](https://gyazo.com/677b89c35367ad5b9c75fa2c3bbb7dcd)
+![fig2)](fig2)
 
 ## 使用方法
 
