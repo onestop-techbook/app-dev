@@ -12,23 +12,23 @@ CapistranoはRubyで記述されており、同じくRubyで作られたRuby on 
 ## ワークフローについて
 
 Capistranoを使用する流れは以下の通りです。
-  1. ローカルでCapistranoのインストール
-  2. 設定ファイルの作成
-  3. 設定ファイルの編集
-  4. コマンド「bundle exec cap production deploy」の実行
-  5. デプロイ完了
+1. ローカルでCapistranoのインストール
+2. 設定ファイルの作成
+3. 設定ファイルの編集
+4. コマンド「bundle exec cap production deploy」の実行
+5. デプロイ完了
   
-  ## 実行環境及び前提条件
-  - ローカル側のOS・・・ubuntu
-  - サーバ側（デプロイ先）のOS・・・ubuntu
-  - ローカル側、サーバ側ともにrbenv、rubyあり。
-  - ローカルからサーバへのSSH接続及びローカルからGithubへのSSH接続済み。
+### 実行環境及び前提条件
+* ローカル側のOS・・・ubuntu
+* サーバ側（デプロイ先）のOS・・・ubuntu
+* ローカル側、サーバ側ともにrbenv、rubyあり。
+* ローカルからサーバへのSSH接続及びローカルからGithubへのSSH接続済み。
 
-![fig2)](fig2)
+![fig2](fig2)
 
-## 使用方法
+### 使用方法
 
-### Capistranoのインストール
+#### Capistranoのインストール
 ---------------------------
 Ruby on Railsでアプリケーションを作っていて、Bundlerを使っている場合は、以下のようにGemfileに
 `gem 'capistrano', '~> 3.0.1'`の記述を追加して
