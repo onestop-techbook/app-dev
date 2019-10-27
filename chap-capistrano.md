@@ -32,8 +32,8 @@ Capistranoを使用する流れは以下の通りです。
 Ruby on Railsでアプリケーションを作っていて、Bundlerを使っている場合は、以下のようにGemfileに
 `gem 'capistrano', '~> 3.0.1'`の記述を追加して、
 
->ローカルでの実行
-```sh {caption = "hello_world"}
+ローカルでの実行
+```sh
 $ bundle install
 ```
 を実行します。
