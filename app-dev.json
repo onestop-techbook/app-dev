@@ -42,7 +42,8 @@
       "chap-team-development.md",
       "chap-requirements.md",
 
-      "placeholder.md"
+      "placeholder.md",
+      "chap-capistrano.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
