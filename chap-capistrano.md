@@ -7,3 +7,21 @@ Capistranoとはローカルで制作したアプリケーションを、自動�
 ![fig1](fig1)
 
 CapistranoはRubyで記述されており、同じくRubyで作られたRuby on Railsでもよく使われます。Rubyで記述されているものの、PHPのような他の言語で記述されたアプリケーションのデプロイでも使用できます。
+
+## ワークフローについて
+
+Capistranoを使用する流れは以下の通りです。
+1. ローカルでCapistranoのインストール
+2. 設定ファイルの作成
+3. 設定ファイルの編集
+4. コマンド「bundle exec cap production deploy」の実行
+5. デプロイ完了
+  
+### 実行環境及び前提条件
+* ローカル側のOS・・・ubuntu
+* サーバ側（デプロイ先）のOS・・・ubuntu
+* ローカル側、サーバ側ともにrbenv、rubyあり。
+* ローカルからサーバへのSSH接続及びローカルからGithubへのSSH接続済み。
+
+![fig2](fig2)
+
