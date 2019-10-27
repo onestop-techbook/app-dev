@@ -38,7 +38,7 @@ $ bundle install
 ```
 を実行します。
 
->（ローカル）Gemfile
+（ローカル）Gemfile
 ```sh {caption="Gemfileの指定"}
 source 'https://rubygems.org'
 
