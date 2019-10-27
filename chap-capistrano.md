@@ -33,8 +33,8 @@ Ruby on Railsでアプリケーションを作っていて、Bundlerを使って
 `gem 'capistrano', '~> 3.0.1'`の記述を追加して、
 
 >ローカルでの実行
-```sh
-[hello_world] $ bundle install
+```sh {caption = "hello_world"}
+$ bundle install
 ```
 を実行します。
 
