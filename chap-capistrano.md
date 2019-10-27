@@ -38,6 +38,47 @@ $ bundle install
 ```
 を実行します。
 
+>（ローカル）Gemfile
+```sh {caption="Gemfileの指定"}
+source 'https://rubygems.org'
+
+gem 'rails',        '5.1.6'
+gem 'puma',         '3.9.1'
+gem 'sass-rails',   '5.0.6'
+gem 'uglifier',     '3.2.0'
+gem 'coffee-rails', '4.2.2'
+gem 'jquery-rails', '4.3.1'
+gem 'turbolinks',   '5.0.1'
+gem 'jbuilder',     '2.6.4'
+gem 'sqlite3',      '1.3.13'
+
+group :development, :test do
+  gem 'byebug', '9.0.6', platform: :mri
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+end
+
+group :development do
+  gem 'web-console',           '3.5.1'
+  gem 'listen',                '3.1.5'
+  gem 'spring',                '2.0.2'
+  gem 'spring-watcher-listen', '2.0.1'
+  
+end
+
+group :production, :staging do
+  gem 'unicorn'
+end
+
+# Windows環境ではtzinfo-dataというgemを含める
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+```
+
+ネットの記事のよっては`capistrano3-unicorn`というgemを使用しているものを多数見かけます。しかし、場合によってエラーが出ることがあるので記述はやめましょう。
+
+
 
 
 
