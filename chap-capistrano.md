@@ -78,6 +78,94 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ネットの記事のよっては`capistrano3-unicorn`というgemを使用しているものを多数見かけます。しかし、場合によってエラーが出ることがあるので記述はやめましょう。
 
+その後、次のコマンドを実行してcapistranoをアプリケーションにインストールします。
+
+ローカルでの実行
+```sh
+$ bundle exec cap install
+```
+
+すると次のようなファイルが生成されます。
+アプリケーションのホームディレクトリ
+├─  Capfile
+├─  config
+│ ├─  deploy
+│ │ ├─production.rb
+│ │ └─staging.rb
+│ └─deploy.rb
+└─  lib
+    └─capistrano
+        └─tasks
+
+ではそれぞれのファイルについて見ていきましょう。
+
+### 各ファイルの説明
+#### Capfile
+
+Capfileはcapistrano全体の設定ファイルです。
+(ローカル)Capfile
+```sh
+require 'capistrano/setup'
+require 'capistrano/deploy'
+require 'capistrano/rbenv' 
+require 'capistrano/bundler'
+require 'capistrano/rails/assets' 
+require 'capistrano/rails/migrations' 
+
+# require 'capistrano3/unicorn'
+# require 'capistrano/rvm'
+# require 'capistrano/chruby'
+# require 'capistrano/passenger'
+
+# taskを記述したファイルを読み込むよう設定。　場所と拡張子を指定。拡張子に注意。
+Dir.glob('lib/capistrano/tasks/*.rb').each { |r| import r }
+```
+`require`で必要な機能が書かれたファイル類を読み込んでいます。
+`capistrano/setup`では主に次のことを行っています。
+
+* SCMやデプロイ先などアプリケーション固有の変数を初期化
+* config/deploy.rbの読み込み
+* config/deploy/*.rbの読み込み
+* SCM固有のコマンド定義を読み込み
+* SSH設定を読み込み
+
+`capistrano/deploy`では主に次のことを行っています。
+
+* デプロイ先のディレクトリなどを準備する
+* 初回のみgit cloneする
+* 毎回git remote updateが行われる
+
+#### ステージング環境.rb（production.rbとstaging.rb）
+config/deploy配下に`production.rb`と`staging.rb`の２種類のファイルがあります。これらはデプロイする環境別の設定を記述するファイルであり、前者は本番環境を、後者はステージング環境を意味しています。主に次のことを設定しています。
+
+* サーバーホスト名（デプロイ先サーバのIPアドレス）
+* サーバーへのログインユーザー名
+* サーバロール(※後述)
+* SSH設定
+* その他、そのサーバに紐づく任意の設定
+
+ちなみに私は、本番環境のサーバーのデプロイするために次のような設定にしました。
+
+（ローカル）config/deploy/production.rb
+
+```sh
+//デプロイ先サーバーのIPアドレス
+server '3.115.145.192',
+    //ログインユーザ名
+    user: 'yoshikawa',
+    //サーバのロール（役割）
+    roles: %w{web app},
+    ssh_options:{
+      user: 'yoshikawa',
+      //秘密鍵の位置。ローカルにある
+      keys: '~/.ssh/id_rsa',
+      forward_agent: true,
+      auth_methods: %w{publickey},
+    }
+```
+
+ロールとは、「役割」を意味します。
+`roles: %w{web app}`だと、これを記述したアプリケーションはwebサーバーとアプリケーションサーバーの二つの役割を持っていることを意味します。また、DBサーバーの機能もあるなら、`roles: %w{web app db}`とする必要があります。
 
 
 
