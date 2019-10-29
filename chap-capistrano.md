@@ -87,15 +87,15 @@ $ bundle exec cap install
 
 すると次のようなファイルが生成されます。
 アプリケーションのホームディレクトリ  
-├─  Capfile<br>
-├─  config<br>
-│ ├─  deploy<br>
-│ │ ├─production.rb<br>
-│ │ └─staging.rb<br>
-│ └─deploy.rb<br>
-└─  lib<br>
-    └─capistrano<br>
-        └─tasks<br>
+├─  Capfile
+├─  config
+│ ├─  deploy
+│ │ ├─production.rb
+│ │ └─staging.rb
+│ └─deploy.rb
+└─  lib
+    └─capistrano
+        └─tasks
 
 ではそれぞれのファイルについて見ていきましょう。
 
@@ -260,8 +260,8 @@ Capistranoを通じたデプロイの流れの中では、git pushを行って�
 
 こうすることで、gitに重要データのファイルを上げることなく、且つプログラムも正常に動かすことができます。
 
-例えば<br>
-`set :linked_files, fetch(:linked_files,[]).push('config/settings.yml')`<br>
+例えば
+`set :linked_files, fetch(:linked_files,[]).push('config/settings.yml')`
 だと、
 **[ここの値を参照]と書いた箇所と、config/settings.ymlに書かれている値は同一**と設定をしていることになります。
 
