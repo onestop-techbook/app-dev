@@ -483,4 +483,76 @@ forkとは、masterがworkerを生み出すプロセスのことを指します�
 ```
 を実行します。
 
+## capistranoに関係するエラーとその解決策
+
+これらのエラーが出ることがあり、エラーの原因や対応策について説明します。
+
+* ssh::connectiontimeout  
+* linked file /var/www/rails/hello_world/shared/config/`settings.yml` does no…
+
+* The deploy has failed with an error: Don't know how to build task 'unicorn:restart' (See the list of available tasks with cap --tasks)
+
+* No such prosess
+
+* Gem::LoadError: Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).
+
+ 
+### ssh::connectiontimeout
+このエラーはローカルとデプロイ先サーバーとの間のSSHが確立できていない時に発生します。ローカルで`ssh-keygen`を使って秘密鍵と公開鍵を生成し、公開鍵をデプロイ先サーバーも登録しておきましょう。
+
+### linked file 
+### /var/www/rails/hello_world/shared/config/settings.yml does no…
+
+表示されたデプロイ先サーバーのディレクトリ
+（/var/www/rails/hello_world/shared/config）に、`settings.yml`がなかったことで発生しています。そのためデプロイ前に指定のディレクトリにsettings.ymlを作成しておきましょう。
+
+### The deploy has failed with an error: Don’t know how to build task ‘unicorn:restart’ (See the list of available tasks with cap --tasks)
+
+ 
+ このエラーはunicorn.rbが読み込まれないことによって、unicorn:restartというタスクが実行されないので、発生してます。Capfileの下に「Dir.glob…」という箇所があり、taskファイルの拡張子が正しいか注意を払う必要があります。私の場合は「.rb」なので次のように設定しました。
+ 
+ ```sh
+ Dir.glob('lib/capistrano/tasks/*.rb').each { |r| import r }
+ ```
+ ネットの記事によっては「.rb」ではなく、「`.rake`」や「`.cap`」になっているケースもあります。次のような記述です。
+ ```sh
+ Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
+ ```
+ ```sh
+ Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
+ ```
+ 
+ それぞれの設定に合わせて、編集するようにしましょう。
+
+### No such prosess
+このエラーは、capistranoが削除しようとしたプロセスIDが実行後既に消去されたか、またはシステム内で別のプロセスIDに置き換えられた時に発生します。解決策としては、デプロイ先サーバーの`/var/www/rails/hello_world/current/tmp/pids`にある`unicorn.pid`を削除しましょう。unicorn.pidには「24368」のようなプロセスIDが記載されています。これを削除後にもう一度デプロイしましょう。
+
+### Gem::LoadError: Specified ‘sqlite3’ for database adapter, but the gem is not loaded. Add gem 'sqlite3' to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).
+
+これはsqlite3がインストールされていないことにより発生しています。`Gemfile`に`gem 'sqlite3'`の記述を追加したら、
+
+ローカルでの実行
+```sh
+[hello_world] $ bundle install
+```
+を実行します。ただし、場合によってはこれでも同じエラーが消えない場合があります。その時は本番環境であるデプロイ先サーバーでもsqlite3をインストールしましょう。私の場合、デプロイ先サーバーのOSはubuntuでしたので次のコマンドを実行しました。本番環境にもsqlite3をインストールするとエラーは消えました。
+
+デプロイ先サーバーでの実行
+```sh
+[yoshikawa|hello_world] $:sudo apt-get install sqlite3 libsqlite3-dev
+```
+sqlite3に関わらず、ローカルと本番環境の両方に必要なソフトウェアやライブラリがインストールされているかは重要な注意点です。
+
+## 参考URL
+
+「入門 Capistrano 3 ~ 全ての手作業を生まれる前に消し去りたい」
+https://labs.gree.jp/blog/2013/12/10084/
+
+
+「(Capistrano編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで」
+https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b
+
+
+「A remote server automation and deployment tool written in Ruby.」
+https://capistranorb.com/
 
