@@ -25,18 +25,29 @@ Capistranoを使用する流れは以下の通りです。
 
 ![fig2](fig2)
 
+以下実行コマンドを併記して説明を進めますが、ローカルでの実行は
+
+```sh
+[local] $ bundle install
+```
+
+サーバでの実行は、
+
+```sh
+[server] $ bundle install
+```
+
+という形で記載します。
+
 ### 使用方法
 
 #### Capistranoのインストール
 
 Ruby on Railsでアプリケーションを作っていて、Bundlerを使っている場合は、以下のようにGemfileに
-`gem 'capistrano', '~> 3.0.1'`の記述を追加して、
-
-ローカルでの実行
+`gem 'capistrano', '~> 3.0.1'`の記述を追加して、ローカルで実行します。
 ```sh
-$ bundle install
+[local] $ bundle install
 ```
-を実行します。
 
 （ローカル）Gemfile
 ```sh {caption="Gemfileの指定"}
@@ -80,9 +91,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 その後、次のコマンドを実行してcapistranoをアプリケーションにインストールします。
 
-ローカルでの実行
+
 ```sh
-$ bundle exec cap install
+[local] $ bundle exec cap install
 ```
 
 すると次のようなファイルが生成されます。
@@ -147,7 +158,6 @@ config/deploy配下に`production.rb`と`staging.rb`の２種類のファイル�
 ちなみに私は、本番環境のサーバーのデプロイするために次のような設定にしました。
 
 （ローカル）config/deploy/production.rb
-
 ```sh
 //デプロイ先サーバーのIPアドレス
 server '3.115.145.192',
@@ -269,10 +279,8 @@ Capistranoを通じたデプロイの流れの中では、git pushを行って�
 
 まずはローカルでsecret_key_base用の乱数を生成します。
 
-
-ローカルでの実行
 ```sh
-$: rake secret
+[local]$: rake secret
 jr934ugr89vwredvu9iqfj394vj9edfjcvnxii90wefjc9weiodjsc9oi09fiodjvcijdsjcwejdsciojdsxcjdkkdsv
 //表示されるkeyをコピーする
 ```
@@ -281,12 +289,12 @@ jr934ugr89vwredvu9iqfj394vj9edfjcvnxii90wefjc9weiodjsc9oi09fiodjvcijdsjcwejdscio
 
 デプロイ先サーバーでの実行
 ```sh
-[yoshikawa|~] $: cd /var/www/rails/hello_world
-[yoshikawa|hello_world] $: mkdir shared
-[yoshikawa|hello_world] $: cd shared
-[yoshikawa|shared] $: mkdir config
-[yoshikawa|cd shared] $: cd config
-[yoshikawa|cd config] $: vi settings.yml
+[server|~] $: cd /var/www/rails/hello_world
+[server|hello_world] $: mkdir shared
+[server|hello_world] $: cd shared
+[server|shared] $: mkdir config
+[server|cd shared] $: cd config
+[server|cd config] $: vi settings.yml
 ```
 新規作成するsettings.ymlには、下記のように記述しましょう。
 
@@ -467,19 +475,19 @@ forkとは、masterがworkerを生み出すプロセスのことを指します�
 
 ローカルでの実行
 ```sh
-[hello_world] $ bundle exec cap production deploy
+[local] $ bundle exec cap production deploy
 ```
 すると、「mkdir」「git」「bundle install」「unicorn restart」…といったコマンドが次々と実行されます。
 
 デプロイが成功すると、次のような画像が見えるはずです。
 
-[![fig3](fig3)
-[![fig4](fig4)
+![fig3](fig3)
+![fig4](fig4)
 
 ちなみにいったんデプロイしたアプリケーションをローカルで編集し、再度デプロイし直す時も
 ローカルでの実行
 ```sh
-[hello_world] $ bundle exec cap production deploy
+[local] $ bundle exec cap production deploy
 ```
 を実行します。
 
@@ -533,13 +541,13 @@ forkとは、masterがworkerを生み出すプロセスのことを指します�
 
 ローカルでの実行
 ```sh
-[hello_world] $ bundle install
+[local] $ bundle install
 ```
 を実行します。ただし、場合によってはこれでも同じエラーが消えない場合があります。その時は本番環境であるデプロイ先サーバーでもsqlite3をインストールしましょう。私の場合、デプロイ先サーバーのOSはubuntuでしたので次のコマンドを実行しました。本番環境にもsqlite3をインストールするとエラーは消えました。
 
 デプロイ先サーバーでの実行
 ```sh
-[yoshikawa|hello_world] $:sudo apt-get install sqlite3 libsqlite3-dev
+[server|local] $:sudo apt-get install sqlite3 libsqlite3-dev
 ```
 sqlite3に関わらず、ローカルと本番環境の両方に必要なソフトウェアやライブラリがインストールされているかは重要な注意点です。
 
