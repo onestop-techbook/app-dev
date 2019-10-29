@@ -100,7 +100,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 アプリケーションのホームディレクトリ
 
-├─  Capfile<br>  
+├─  Capfile
+
 ├─  config
 
 │ ├─  deploy
@@ -113,9 +114,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 └─  lib
 
-    └─capistrano
+　　└─capistrano
 
-        └─tasks
+　　　└─tasks
 
 ではそれぞれのファイルについて見ていきましょう。
 
