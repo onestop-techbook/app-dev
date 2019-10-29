@@ -86,16 +86,16 @@ $ bundle exec cap install
 ```
 
 すると次のようなファイルが生成されます。
-アプリケーションのホームディレクトリ
-├─  Capfile
-├─  config
-│ ├─  deploy
-│ │ ├─production.rb
-│ │ └─staging.rb
-│ └─deploy.rb
-└─  lib
-    └─capistrano
-        └─tasks
+アプリケーションのホームディレクトリ  
+├─  Capfile<br>
+├─  config<br>
+│ ├─  deploy<br>
+│ │ ├─production.rb<br>
+│ │ └─staging.rb<br>
+│ └─deploy.rb<br>
+└─  lib<br>
+    └─capistrano<br>
+        └─tasks<br>
 
 ではそれぞれのファイルについて見ていきましょう。
 
@@ -168,5 +168,105 @@ server '3.115.145.192',
 `roles: %w{web app}`だと、これを記述したアプリケーションはwebサーバーとアプリケーションサーバーの二つの役割を持っていることを意味します。また、DBサーバーの機能もあるなら、`roles: %w{web app db}`とする必要があります。
 
 
+#### config/deploy.rb
+production環境、stading環境に共通する設定を記述します。
+
+* アプリケーション名
+* gitのレポジトリ
+* 利用するSCM
+* タスク
+* それぞれのタスクで実行するコマンド
+ 
+アプリケーション名やレポジトリ名などの設定値は
+`set :名前, 値`で設定します。
+
+
+（ローカル）config/deploy.rb
+```sh
+# config valid for current version and patch releases of Capistrano
+lock "~> 3.11.1"
+
+#application to be deployed
+set :application, "hello_world"
+
+#git repository to be cloned
+set :repo_url, "git@github.com:astrophysik928/hello_world.git"
+
+# deployするブランチ。デフォルトはmasterなのでなくても可。
+set :branch, 'master'
+
+# deploy先のディレクトリ。 各自の状況に応じて変更してください。
+set :deploy_to, '/var/www/rails/hello_world'
+
+# シンボリックリンクをはるファイル。(※後述)
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+
+# シンボリックリンクをはるフォルダ。(※後述)
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+
+# 保持するバージョンの個数(※後述)
+set :keep_releases, 5
+
+# デプロイ先サーバのrubyのバージョン
+set :rbenv_ruby, '2.6.3'
+
+#出力するログのレベル。
+set :log_level, :debug
+
+namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+
+  desc 'Create database'
+  task :db_create do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:create'
+        end
+      end
+    end
+  end
+
+  desc 'Run seed'
+  task :seed do
+    on roles(:app) do
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
+  after :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
+end
+```
+
+「シンボリックリンク」という言葉が見られます。
+シンボリックリンクとは、簡単に言うとWindowsにおけるショートカットのようなもので、あるフォルダやファイルのリンクを保持しています。
+
+Capistranoを通じたデプロイの流れの中では、git pushを行っています。
+しかし、**セキュリティー的にIDやパスワードなどをそのままgitにプッシュしてしまうと危険**です。
+
+そこでシンボリックリンクを用いて、gitにあげるファイルには`password: [この値を参照]`と記述しておいて、シンボリックで指定した箇所に、その値を直接書き込みます。これで同じものを参照しているようにしています。
+
+こうすることで、gitに重要データのファイルを上げることなく、且つプログラムも正常に動かすことができます。
+
+例えば<br>
+`set :linked_files, fetch(:linked_files,[]).push('config/settings.yml')`<br>
+だと、
+**[ここの値を参照]と書いた箇所と、config/settings.ymlに書かれている値は同一**と設定をしていることになります。
+
+今回はこの環境変数の置き場所を、「.push('config/settings.yml')」と指定しているので、`shared/config/settings.yml`というファイルを生成し、そこに環境変数を記載する必要があります。
+
+まずはローカルでsecret_key_base用の乱数を生成します。
 
 
