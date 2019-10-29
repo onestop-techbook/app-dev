@@ -97,15 +97,25 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ```
 
 すると次のようなファイルが生成されます。
-アプリケーションのホームディレクトリ<br>
-├─  Capfile<br>
-├─  config<br>
-│ ├─  deploy<br>
-│ │ ├─production.rb<br>
-│ │ └─staging.rb<br>
-│ └─deploy.rb<br>
-└─  lib<br>
-    └─capistrano<br>
+
+アプリケーションのホームディレクトリ
+
+├─  Capfile
+
+├─  config
+
+│ ├─  deploy
+
+│ │ ├─production.rb
+
+│ │ └─staging.rb
+
+│ └─deploy.rb
+
+└─  lib
+
+    └─capistrano
+
         └─tasks
 
 ではそれぞれのファイルについて見ていきましょう。
