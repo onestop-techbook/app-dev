@@ -270,3 +270,109 @@ Capistranoを通じたデプロイの流れの中では、git pushを行って�
 まずはローカルでsecret_key_base用の乱数を生成します。
 
 
+ローカルでの実行
+```sh
+$: rake secret
+jr934ugr89vwredvu9iqfj394vj9edfjcvnxii90wefjc9weiodjsc9oi09fiodjvcijdsjcwejdsciojdsxcjdkkdsv
+//表示されるkeyをコピーする
+```
+
+そしてデプロイ先サーバーに、ローカルで生成したsecret_key_base（jr93...）を登録します。乱数は各ローカルによって異なります。
+
+デプロイ先サーバーでの実行
+```sh
+[yoshikawa|~] $: cd /var/www/rails/hello_world
+[yoshikawa|hello_world] $: mkdir shared
+[yoshikawa|hello_world] $: cd shared
+[yoshikawa|shared] $: mkdir config
+[yoshikawa|cd shared] $: cd config
+[yoshikawa|cd config] $: vi settings.yml
+```
+新規作成するsettings.ymlには、下記のように記述しましょう。
+
+(デプロイ先サーバー)shared/config/settings.yml
+```sh
+production:
+  secret_key_base: jr934ugr89vwredvu9iqfj394vj9edfjcvnxii90wefjc9weiodjsc9o i09fiodjvcijdsjcwejdsciojdsxcjdkkdsv 
+(#ここに先ほど生成した乱数を貼り付け)
+```
+以上で環境変数の登録は完了です。
+
+#### unicorn.rb
+ここではunicornの動作メソッドやpidファイルについて設定します。ちなみにunicornとはHTTPサーバの一種です。unix環境でrailsアプリケーションを動かすために使われます。
+nginxと一緒に使われるのが一般的です。nginxとの併用でサーバのダウンタイムなしでデプロイできるようになります。
+
+(ローカル)lib/capistrano/tasks/unicorn.rb
+```sh
+#unicornのpidファイル、設定ファイルのディレクトリを指定
+namespace :unicorn do
+  task :environment do
+    set :unicorn_pid,    "#{current_path}/tmp/pids/unicorn.pid"
+    set :unicorn_config, "#{current_path}/config/unicorn/production.rb"
+  end
+
+#unicornをスタートさせるメソッド
+  def start_unicorn
+    within current_path do
+      execute :bundle, :exec, :unicorn, "-c #{fetch(:unicorn_config)} -E #{fetch(:rails_env)} -D"
+    end
+  end
+
+#unicornを停止させるメソッド
+  def stop_unicorn
+    execute :kill, "-s QUIT $(< #{fetch(:unicorn_pid)})"
+  end
+
+#unicornを再起動するメソッド
+  def reload_unicorn
+    execute :kill, "-s USR2 $(< #{fetch(:unicorn_pid)})"
+  end
+
+#unicronを強制終了するメソッド
+  def force_stop_unicorn
+    execute :kill, "$(< #{fetch(:unicorn_pid)})"
+  end
+
+#unicornをスタートさせるtask
+  desc "Start unicorn server"
+  task start: :environment do
+    on roles(:app) do
+      start_unicorn
+    end
+  end
+
+#unicornを停止させるtask
+  desc "Stop unicorn server gracefully"
+  task stop: :environment do
+    on roles(:app) do
+      stop_unicorn
+    end
+  end
+
+#既にunicornが起動している場合再起動を、まだの場合起動を行うtask
+  desc "Restart unicorn server gracefully"
+  task restart: :environment do
+    on roles(:app) do
+      if test("[ -f #{fetch(:unicorn_pid)} ]")
+        reload_unicorn
+      else
+        start_unicorn
+      end
+    end
+  end
+
+#unicornを強制終了させるtask 
+  desc "Stop unicorn server immediately"
+  task force_stop: :environment do
+    on roles(:app) do
+      force_stop_unicorn
+    end
+  end
+end
+```
+unicornは起動する際に、PID(アプリケーションのプロセスID。29642など)を生成します。
+
+そしてこの生成されたPIDは、
+`#{current_path}/tmp/pids/unicorn.pid`（ディレクトリはデプロイ先サーバー）に自動で記述されます。ここに番号が書かれているか否かで、OSはunicornが起動しているかを判断します。
+
+このPIDがunicorn.pidファイルに残っている状態で、unicornを起動させてデプロイしようとすると、OSが「起動している状態」だと判断するためエラーが出ます。私の場合、unicorn.pidを残したままでcapistranoでデプロイしようとすると`No such process`、`kill stdout:`、 `Nothing written`、`kill stderr: kill`というエラーが見られました（ちなみにunicorn.pidを削除するとこれらのエラーは消えました）。
