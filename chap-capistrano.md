@@ -459,3 +459,28 @@ unicornの設定ファイルです。デプロイ先サーバーのディレク�
 
 forkとは、masterがworkerを生み出すプロセスのことを指します。
 よってbefore_fork、after_forkとは、workerが生成される前後で実行するタスクの定義になります。
+
+## 本番サーバーへのデプロイ
+
+一通りファイルへの設定が完了したら、次は本番環境にデプロイしましょう。デプロイ前にローカルのターミナルに移りデプロイするアプリケーションのホームディレクトリまで移動しておきます。
+その後、次のコマンドを実行します。
+
+ローカルでの実行
+```sh
+[hello_world] $ bundle exec cap production deploy
+```
+すると、「mkdir」「git」「bundle install」「unicorn restart」…といったコマンドが次々と実行されます。
+
+デプロイが成功すると、次のような画像が見えるはずです。
+
+[![fig3](fig3)
+[![fig4](fig4)
+
+ちなみにいったんデプロイしたアプリケーションをローカルで編集し、再度デプロイし直す時も
+ローカルでの実行
+```sh
+[hello_world] $ bundle exec cap production deploy
+```
+を実行します。
+
+
