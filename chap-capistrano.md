@@ -376,3 +376,86 @@ unicornは起動する際に、PID(アプリケーションのプロセスID。2
 `#{current_path}/tmp/pids/unicorn.pid`（ディレクトリはデプロイ先サーバー）に自動で記述されます。ここに番号が書かれているか否かで、OSはunicornが起動しているかを判断します。
 
 このPIDがunicorn.pidファイルに残っている状態で、unicornを起動させてデプロイしようとすると、OSが「起動している状態」だと判断するためエラーが出ます。私の場合、unicorn.pidを残したままでcapistranoでデプロイしようとすると`No such process`、`kill stdout:`、 `Nothing written`、`kill stderr: kill`というエラーが見られました（ちなみにunicorn.pidを削除するとこれらのエラーは消えました）。
+
+unicornでは次のようなことを行います。
+
+1. 既に起動しているPIDをpid_oldbinという名前に変更し
+2. 新しいPIDを立ち上げて
+3. 新しいPIDと古いpidを一瞬同時に動かした後
+4. 古いPID(pid_oldbin)を停止させる（kill） 
+
+
+これによりアプリケーションが停止するタイミングが無くなります。稼働を止めず、再起動ができようになります(`ホットデプロイ`)。これはunicornの重要な特徴と言えるでしょう。
+
+
+#### config/unicorn/production.rb
+
+unicornの設定ファイルです。デプロイ先サーバーのディレクトリとファイル名を自分のケースに合わせて設定します。
+
+(ローカル)config/unicorn/production.rb
+```sh
+#ワーカーの数。後述
+  $worker  = 2
+  
+#何秒経過すればワーカーを削除するのかを決める
+  $timeout = 30
+  
+#自分のアプリケーション名、currentがつくことに注意。
+  $app_dir = "/var/www/rails/hello_world/current"
+  
+#リクエストを受け取るポート番号を指定。後述
+  $listen  = File.expand_path 'tmp/sockets/.unicorn.sock', $app_dir
+  
+#PIDの管理ファイルディレクトリ
+  $pid     = File.expand_path 'tmp/pids/unicorn.pid', $app_dir
+  
+#エラーログを吐き出すファイルのディレクトリ
+  $std_log = File.expand_path 'log/unicorn.log', $app_dir
+
+# 上記で設定したものが適応されるよう定義
+  worker_processes  $worker
+  working_directory $app_dir
+  stderr_path $std_log
+  stdout_path $std_log
+  timeout $timeout
+  listen  $listen
+  pid $pid
+
+#ホットデプロイをするかしないかを設定
+  preload_app true
+
+#fork前に行うことを定義。後述
+  before_fork do |server, worker|
+    defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
+    old_pid = "#{server.config[:pid]}.oldbin"
+    if old_pid != server.pid
+      begin
+        Process.kill "QUIT", File.read(old_pid).to_i
+      rescue Errno::ENOENT, Errno::ESRCH
+      end
+    end
+  end
+
+#fork後に行うことを定義。後述
+  after_fork do |server, worker|
+    defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+  end
+```
+ソースコードを見ていると、`worker`、`before_fork`という文字が見られます。これらは何を意味するのでしょうか。
+
+実はunicornでは`worker`、`fork`そして`master`という考え方があります。
+一つのmasterが複数のworkerを制御しています。このmasterが各々のworkerに特定の処理を実行するよう命令しています。
+
+```sh
+ $worker  = 2
+```
+
+ここではworkerの数を決めています。またworker数が多いと、消費するメモリー数も大きくなるため特定の時間が経過すれば、削除するように指定します。以下がそのタイミングを指定している個所です。
+
+
+```sh
+ $timeout = 30
+```
+
+forkとは、masterがworkerを生み出すプロセスのことを指します。
+よってbefore_fork、after_forkとは、workerが生成される前後で実行するタスクの定義になります。
