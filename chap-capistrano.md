@@ -86,7 +86,7 @@ $ bundle exec cap install
 ```
 
 すると次のようなファイルが生成されます。
-アプリケーションのホームディレクトリ  
+アプリケーションのホームディレクトリ
 ├─  Capfile
 ├─  config
 │ ├─  deploy
