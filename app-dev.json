@@ -27,10 +27,24 @@
     "PREDEF": ["preface.re"],
     "CHAPS": [
       "chap-easybooks.md",
+
+      "chap-application.md",
+      "chap-development-environment.md",
+      "chap-handcopy.md",
       "chap-technique.md",
       "chap-coding.md",
       "chap-testing.md",
-      "chap-makesmallappforme.md"
+      "chap-makesmallappforme.md",
+      "chap-make-easy.md",
+      "chap-ui-design.md",
+      "chap-software-design.md",
+      "chap-deploy.md",
+      "chap-team-development.md",
+      "chap-agile.md",
+      "chap-requirements.md",
+
+      "placeholder.md",
+      "chap-capistrano.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
