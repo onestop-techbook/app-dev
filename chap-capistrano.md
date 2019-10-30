@@ -564,15 +564,12 @@ sqlite3に関わらず、ローカルと本番環境の両方に必要なソフ�
 ## 参考URL
 
 「入門 Capistrano 3 ~ 全ての手作業を生まれる前に消し去りたい」
-
 https://labs.gree.jp/blog/2013/12/10084/
 
 
 「(Capistrano編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで」
-
 https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b
 
 「A remote server automation and deployment tool written in Ruby.」
-
 https://capistranorb.com/
 
