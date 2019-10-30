@@ -572,7 +572,6 @@ https://labs.gree.jp/blog/2013/12/10084/
 
 https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b
 
-
 「A remote server automation and deployment tool written in Ruby.」
 
 https://capistranorb.com/
