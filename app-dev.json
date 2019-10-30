@@ -44,7 +44,8 @@
       "chap-requirements.md",
 
       "placeholder.md",
-      "chap-capistrano.md"
+      "chap-capistrano.md",
+      "chap-security.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
