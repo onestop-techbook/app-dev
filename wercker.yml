@@ -1,4 +1,4 @@
-box: vvakame/review
+box: vvakame/review:3.2
 
 build:
   steps:
