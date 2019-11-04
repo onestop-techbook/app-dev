@@ -98,7 +98,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 すると次のようなファイルが生成されます。
 
-![fig-folder](フォルダ構造)
+![フォルダ構造](fig-folder)
 
 ではそれぞれのファイルについて見ていきましょう。
 
