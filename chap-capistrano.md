@@ -98,25 +98,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 すると次のようなファイルが生成されます。
 
-アプリケーションのホームディレクトリ
-
-├─  Capfile
-
-├─  config
-
-│ ├─  deploy
-
-│ │ ├─production.rb
-
-│ │ └─staging.rb
-
-│ └─deploy.rb
-
-└─  lib
-
-　　└─capistrano
-
-　　　└─tasks
+![fig-folder](ファイル構成)
 
 ではそれぞれのファイルについて見ていきましょう。
 
@@ -515,16 +497,15 @@ forkとは、masterがworkerを生み出すプロセスのことを指します�
 * Gem::LoadError: Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).
 
  
-### ssh::connectiontimeout
+#### ssh::connectiontimeout
 このエラーはローカルとデプロイ先サーバーとの間のSSHが確立できていない時に発生します。ローカルで`ssh-keygen`を使って秘密鍵と公開鍵を生成し、公開鍵をデプロイ先サーバーも登録しておきましょう。
 
-### linked file 
-### /var/www/rails/hello_world/shared/config/settings.yml does no…
+#### linked file /var/www/rails/hello_world/shared/config/settings.yml does no…
 
 表示されたデプロイ先サーバーのディレクトリ
 （/var/www/rails/hello_world/shared/config）に、`settings.yml`がなかったことで発生しています。そのためデプロイ前に指定のディレクトリにsettings.ymlを作成しておきましょう。
 
-### The deploy has failed with an error: Don’t know how to build task ‘unicorn:restart’ (See the list of available tasks with cap --tasks)
+#### The deploy has failed with an error: Don’t know how to build task ‘unicorn:restart’ (See the list of available tasks with cap --tasks)
 
  
  このエラーはunicorn.rbが読み込まれないことによって、unicorn:restartというタスクが実行されないので、発生してます。Capfileの下に「Dir.glob…」という箇所があり、taskファイルの拡張子が正しいか注意を払う必要があります。私の場合は「.rb」なので次のように設定しました。
@@ -542,10 +523,10 @@ forkとは、masterがworkerを生み出すプロセスのことを指します�
  
  それぞれの設定に合わせて、編集するようにしましょう。
 
-### No such prosess
+#### No such prosess
 このエラーは、capistranoが削除しようとしたプロセスIDが実行後既に消去されたか、またはシステム内で別のプロセスIDに置き換えられた時に発生します。解決策としては、デプロイ先サーバーの`/var/www/rails/hello_world/current/tmp/pids`にある`unicorn.pid`を削除しましょう。unicorn.pidには「24368」のようなプロセスIDが記載されています。これを削除後にもう一度デプロイしましょう。
 
-### Gem::LoadError: Specified ‘sqlite3’ for database adapter, but the gem is not loaded. Add gem 'sqlite3' to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).
+#### Gem::LoadError: Specified ‘sqlite3’ for database adapter, but the gem is not loaded. Add gem 'sqlite3' to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).
 
 これはsqlite3がインストールされていないことにより発生しています。`Gemfile`に`gem 'sqlite3'`の記述を追加したら、
 
@@ -557,7 +538,7 @@ forkとは、masterがworkerを生み出すプロセスのことを指します�
 
 デプロイ先サーバーでの実行
 ```sh
-[server|local] $:sudo apt-get install sqlite3 libsqlite3-dev
+[server|~] $:sudo apt-get install sqlite3 libsqlite3-dev
 ```
 sqlite3に関わらず、ローカルと本番環境の両方に必要なソフトウェアやライブラリがインストールされているかは重要な注意点です。
 
