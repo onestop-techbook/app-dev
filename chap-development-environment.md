@@ -311,7 +311,7 @@ NVIDIAは、元々OSS部分がほとんどないため、OSSやフリーソフ�
 -->
 
 
-### 開発環境のインフラはどう作る
+## 開発環境のインフラはどう作る
 
 #### Infrastrucure as Code
 
@@ -321,6 +321,61 @@ Infrastrucure as Codeとは、サービスを手動で作成するのではな�
 Infrastrucure as Codeのサービスを利用することで、一つのテンプレートファイルから、全く同じ環境を複数作成することが可能となります。サービスの作成作業を自動化することで、人的ミスを防ぐことができますし、開発環境と本番環境で設定が異なる、という事象を防ぐことができます。
 
 では、もう少し具体的に見ていきましょう。
+下記コードがAWSのサービスをserverless frameworkというツールで作成するための、
+テンプレートファイルになります(ファイル名はserverless.yml)。
 
-<!-- ここにserverless frameworkのymlを入れて内容を詳しく解説する -->
+```
+service: serverless-demo
 
+custom:
+  tableName:
+    dev: 'dev_test_table'
+    prod: 'test_table'
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: ${opt:stage, 'dev'}
+  region: ap-northeast-1
+
+functions:
+  hello:
+    handler: handler.hello
+    name: ${self:provider.stage}-lambdaName
+    environment:
+      TABLE_NAME: ${self:custom.tableName.${self:provider.stage}}
+    events:
+      - http:
+          path: users/create
+          method: get
+```
+
+上記のテンプレートファイルを用いると、`sls deploy`というコマンドを実行するだけで、
+API Gateway + Lambdaの構成を作ることが可能です。
+Infrastrucure as Codeの便利なところは、コマンド一つで、複数のサービスを自動で作成することができる点です。
+
+上記のテンプレートは、開発環境と本番環境の両方に対応しています。
+`sls deploy --stage dev`としてコマンドを実行すると下記名前でサービスがデプロイ(作成)されます。
+
+* API Gateway: dev-serverless-demo
+* Lambda: dev-lambdaName
+
+また、`sls deploy --stage prod`としてコマンドを実行すると、下記名前でサービスがデプロイ(作成)されます。
+
+* API Gateway: prod-serverless-demo
+* Lambda: prod-lambdaName
+
+また、開発環境と本番環境で参照するテーブル名はLambdaの環境変数として関数に渡しているため、
+Lambdaのコードは開発環境と本番環境で同じものを使いながら、参照先テーブルを変える、ということができます。
+開発環境のLambdaはdev_test_tableテーブルを参照し、本番環境のLambdaはtest_tableテーブルを参照します。
+
+Infrastrucure as Codeで、開発環境と本番環境を構築する際に重要となるのは、
+サービスを作成するテンプレート内に変数を埋め込み、開発環境と本番環境を同じテンプレートから作成できるようにすることです。
+また、Lambdaなどのコード部分は、環境変数などでテーブル名を渡すようにし、開発環境と本番環境で同一のソースコードを利用することです。
+これにより、開発環境と本番環境で限りなく同じ環境を作ることができるため、事前のテスト、デバッグがしやすくなります。
+
+**注意事項：**
+
+上記のserverless.ymlを実際に利用してサービスの構築をしないようにお願いします。
+認証なしのAPIが作成され非常に危険であり、Lambdaに必要な権限があたっていないため、
+全く役に立たたいLambda関数が作成されるためです。
