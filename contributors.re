@@ -137,6 +137,17 @@ PMチームでDB担当しながら、副業で会社設立し、Management3.0の
 //}
 SIerからWeb系に転職し、いまはスマホアプリの開発をしているITエンジニア。Twitter、ブログ、Podcast配信、数多くの趣味と楽しく活動中。今回は自分の経験を通して、目標設定について必須なのかどうかを考えてみました。
 
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/endohizumi_400x400.png}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        遠藤ヒズミ https://twitter.com/endo_hizumi\\
+        \end{minipage}
+    \hspace{1ex} 
+//}
+都内でPython書いてるSESのWebコーダー。プラモやWebアプリを作ったり、折りたたみタブレットやキーボードつきデバイスを収集する変態ガジェットスキー。手捕り30万欲しい！
 
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
