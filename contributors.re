@@ -152,6 +152,25 @@ SIerからWeb系に転職し、いまはスマホアプリの開発をしてい�
 セキュリティエンジニアです。セキュリティ系コミュニティ「脆弱性診断研究会」で毎月ハンズオンセミナーを開催してます。同人誌活動は技術書典5から。
 趣味でドラム叩いてます。所属のバンドはJ-POP系でギターやキーボードを絶賛募集中！
 
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/konosumi_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        @konosumi https://twitter.com/konosumi\\
+        ブログ： https://www.konosumi.net/
+        \end{minipage}
+    \hspace{1ex} %コメントとアイコンの間を空けて体裁を整える
+//}
+技術書典4から同人誌を執筆しているITエンジニアです。
+直近では、「ゲームセンターを楽しむ技術」というゲームセンター同人誌を共著で執筆しました。
+好きな怒首領蜂は大往生ブラックレーベルです。
+
+
+
 
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
