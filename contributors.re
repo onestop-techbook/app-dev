@@ -169,8 +169,18 @@ SIerからWeb系に転職し、いまはスマホアプリの開発をしてい�
 直近では、「ゲームセンターを楽しむ技術」というゲームセンター同人誌を共著で執筆しました。
 好きな怒首領蜂は大往生ブラックレーベルです。
 
+　
 
-
-
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/etDVh3D9_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        雛形 https://twitter.com/hinahypersonica\\
+        \end{minipage}
+    \hspace{1ex}
+//}
+研究者。普段は本とゲームを語ります。好きな怒首領蜂大往生ブラックレーベルの自機はTypeBショット強化です。
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
