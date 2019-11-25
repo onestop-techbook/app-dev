@@ -184,6 +184,21 @@ SIerからWeb系に転職し、いまはスマホアプリの開発をしてい�
 のんびりごろごろ、ネコ、うさまる、技術の話は大好きです。SIerですがアジャイルな開発も経験していたりします。
 最近は思うところもあり、色々と活動中。最近のお気に入り言語はGo言語とElixirです。
 
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/akki_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        あっきー @papi\_tokei https://twitter.com/papi\_tokei\\
+        \end{minipage}
+    \hspace{1ex} %コメントとアイコンの間を空けて体裁を整える
+//}
+京都で働いているIoTエンジニアです。
+クラウド、フロントエンド、デバイス、、、いろいろな要素と戦いながら、四苦八苦の毎日。
+リーサルウェポンという肩書を夢見て、日々奮闘中！
 
 
 
