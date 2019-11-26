@@ -1,13 +1,13 @@
 {
   "bookname": "Onestop-app-dev",
-  "booktitle": "Onestopアプリ開発",
+  "booktitle": "Onestopアプリ開発 α版",
   "aut": [],
   "language": "ja",
   "toc": true,
   "rights": "(C) 2019　親方Project",
   "colophon": true,
   "history": [["2019-12-14 技術書同人誌博覧会2（技書博2）"]],
-  "prt": "株式会社　栄光",
+  "prt": "K-9（ケーナイン）",
   "pbl": "親方Project",
   "edt": "親方Project",
   "secnolevel": 3,
@@ -24,8 +24,7 @@
   "catalog": {
     "PREDEF": ["preface.re"],
     "CHAPS": [
-      "chap-easybooks.md",
-
+      "chap-contents.md",
       "chap-application.md",
       "chap-development-environment.md",
       "chap-handcopy.md",
