@@ -144,6 +144,7 @@ SIerからWeb系に転職し、いまはスマホアプリの開発をしてい�
 リーサルウェポンという肩書を夢見て、日々奮闘中！
 
 
+
 //embed{
     \begin{minipage}{.1\linewidth}
         \centering
