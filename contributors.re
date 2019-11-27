@@ -144,5 +144,18 @@ SIerからWeb系に転職し、いまはスマホアプリの開発をしてい�
 リーサルウェポンという肩書を夢見て、日々奮闘中！
 
 
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/tomoaki_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        @tomoaki\_teshima https://twitter.com/tomoaki\_teshima\\
+        サークル名: コサイン探偵
+        \end{minipage}
+    \hspace{1ex}
+//}
+Armおじさん。OpenCVのcontributor。CV勉強会@関東幹事の一人。
+執筆やOSSのデバッグはもっぱら電車の中で行います。
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
