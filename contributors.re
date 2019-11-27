@@ -159,4 +159,21 @@ SIerからWeb系に転職し、いまはスマホアプリの開発をしてい�
 Armおじさん。OpenCVのcontributor。CV勉強会@関東幹事の一人。
 執筆やOSSのデバッグはもっぱら電車の中で行います。
 
+　
+#@# ↑明示的な全角空白があるので、忘れずに。
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/hoshimad_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        ほしまど @hoshimado7 https://twitter.com/hoshimado7\\
+        サークル名：Fluorite
+        \end{minipage}
+    \hspace{1ex}
+//}
+仕事はたぶんIT関連。でも仕事じゃコーディングしてない。
+Node.jsの手軽さが好きな、日曜プログラマー。「こんなツールがあったら便利だな。無いの？なら作ろう」で気づいたらアプリ開発に足を踏み入れてた。そんな日常の延長としてのアプリ開発も、何かの参考になれば嬉しいです。
+
+
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
