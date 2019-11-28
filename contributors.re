@@ -16,6 +16,7 @@
 #@# Fhe3QTCf_400x400.jpg    オーニシ
 #@# hoshimad_400x400.jpg    ほしまど
 #@# youchan_400x400.jpg     youchan
+#@# mogya_400x400.jpg       もぎゃ
 #@#自己紹介ひな形↓
 #@#　←ダミー空白行用の全角スペース（embed内では上方向のスペースが有効にならないため）
 #@#//embed{
@@ -160,7 +161,7 @@ Armおじさん。OpenCVのcontributor。CV勉強会@関東幹事の一人。
 執筆やOSSのデバッグはもっぱら電車の中で行います。
 
 　
-#@# ↑明示的な全角空白があるので、忘れずに。
+
 //embed{
     \begin{minipage}{.1\linewidth}
         \centering
@@ -175,5 +176,22 @@ Armおじさん。OpenCVのcontributor。CV勉強会@関東幹事の一人。
 仕事はたぶんIT関連。でも仕事じゃコーディングしてない。
 Node.jsの手軽さが好きな、日曜プログラマー。「こんなツールがあったら便利だな。無いの？なら作ろう」で気づいたらアプリ開発に足を踏み入れてた。そんな日常の延長としてのアプリ開発も、何かの参考になれば嬉しいです。
 
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/mogya_400x400.png}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        もぎゃ @mogya https://twitter.com/mogya\\
+        \end{minipage}
+    \hspace{1ex}
+//}
+おひるねのできるエンジニア。街の電源検索サイト モバイラーズオアシス の他、電子書籍の情報サイトを準備中
+
+　
+
+#@# この上に追記するといい感じになります。明示的な全角空白があるので、忘れずに。
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
