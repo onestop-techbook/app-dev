@@ -25,7 +25,6 @@
     "PREDEF": ["preface.re"],
     "CHAPS": [
       "chap-contents.md",
-      "chap-application.md",
       "csprograming.re",
       "chap-make-easy.md",
       "chap-ui-design.md",
