@@ -23,7 +23,7 @@
 往復だと、2.6時間、これが電車の乗車時間なら、アプリの一機能作るのには、十分すぎる時間です。  
 しかも、わざわざ確保しなくて良い強制的に発生する時間です。
 
-![平均通勤時間](images/endohizumi/2019-11-23-15-10-22.png)
+![平均通勤時間](images/endohizumi/2019-11-23-15-10-22)
 
 出典：平成28年社会生活基本調査　生活行動に関する結果　結果の概要 - 総務省　統計局  
 [https://www.stat.go.jp/data/shakai/2016/pdf/gaiyou2.pdf](https://www.stat.go.jp/data/shakai/2016/pdf/gaiyou2.pdf)
@@ -95,17 +95,17 @@ AndroidでLinuxのCLI環境を使う事ができます。
 
 キーボードは入れただけでは利用できず、設定が必要です。  
 Hacker's Keyboardのアプリを起動して「ENABLE KEYBOARD」を、タップします。  
-![](images/endohizumi/2019-11-23-21-25-01.png)  
+![](images/endohizumi/2019-11-23-21-25-01)
 タップするとキーボード管理画面が出るので、Hacker's Keyboardの横のトグルスイッチをタップして、有効にします。  
 初回は有効にするか確認のダイアログが出ますので、OKをタップします。  
-![](images/endohizumi/2019-11-23-22-51-35.png)  
+![](images/endohizumi/2019-11-23-22-51-35)
 この設定が完了すれば、Termuxを使うときに「Hacker's Keyboard」へ切り替えられます。  
-![](images/endohizumi/2019-11-23-23-24-04.png)
+![](images/endohizumi/2019-11-23-23-24-04)
 
 **TIPS: キーボードの切り替え変更ダイアログの出し方**  
 使っているスマホまたはAndroidのバージョンによって、キーボードの変更ダイアログの出し方が異なります。下の画像のように、右端にアイコンが表示されるものもあったり、通知バーの中に表示されるものもあります。  
-![](images/endohizumi/2019-11-25-02-21-19.png)
-![](images/endohizumi/2019-11-24-13-06-02.png)
+![](images/endohizumi/2019-11-25-02-21-19)
+![](images/endohizumi/2019-11-24-13-06-02)
 
 ## Vue.jsの開発環境のセットアップ
 
@@ -134,7 +134,7 @@ $ vue create my-project
 
 プロジェクトの作成が終了したら、以下のメッセージが表示されます。  
 後は、画面にしたがって、ディレクトリを移動、開発用サーバーを実行します。  
-![](images/endohizumi/2019-11-24-01-36-36.png)
+![](images/endohizumi/2019-11-24-01-36-36)
 
 ```bash
 $ cd my-project
@@ -142,9 +142,9 @@ $ npm run serve
 ```
 
 サーバーのIPアドレスが表示されたら、Termuxからアプリを普段使っているWebブラウザーに変更して、表示されているアドレスにアクセスして、ウェルカムページが出たらセットアップは完了です。お疲れ様でした。
-![](images/endohizumi/2019-11-24-01-43-09.png)
+![](images/endohizumi/2019-11-24-01-43-09)
 
-![](images/endohizumi/2019-11-24-01-45-55.png)
+![](images/endohizumi/2019-11-24-01-45-55)
 
 ## PCとのビルド速度比較
 
@@ -152,7 +152,7 @@ $ npm run serve
 気になりますよね？　動くけど、パソコンより遅いなら、実用性がないネタ環境になってしまいます。  
 そこで、PCでも、VueCLIを使ったVue.jsの環境を作って、PCとどのくらい差が出るのか。比較してみました。
 
-![](images/endohizumi/2019-11-24-01-59-13.png)
+![](images/endohizumi/2019-11-24-01-59-13)
 
 結果として、1位のデスクトップはRAM:24GBを乗せたモンスターマシンなので、当然の結果とも言えます。
 注目すべき点は、開発機として標準的なスペックのMacBook AirよりスマホのXperia XZ2 Premiumの方が、ビルド速度が1秒早かったと言う点です。
@@ -176,8 +176,8 @@ termuxはAndroidとのファイル連係が可能です。
 ### ファイルアプリからアクセスする
 
 Android 5.xから標準で入っている「ファイル」と言うアプリから、Termuxを選ぶと、Termux上で作成したファイルの操作が可能です。
-![](images/endohizumi/2019-11-24-15-54-29.png)
-![](images/endohizumi/2019-11-24-16-07-42.png)
+![](images/endohizumi/2019-11-24-15-54-29)
+![](images/endohizumi/2019-11-24-16-07-42)
 
 ### termux-setup-storageを実行する
 
@@ -222,11 +222,11 @@ Linux環境の作り方は簡単で、インストールしたUserLAndアプリ�
 
 今回は、Ubuntuを選びます。
 
-![](images/endohizumi/2019-11-25-02-55-49.png)
-![](images/endohizumi/2019-11-25-02-56-15.png)
+![](images/endohizumi/2019-11-25-02-55-49)
+![](images/endohizumi/2019-11-25-02-56-15)
 
 最初は、SSHを選択します。
-![](images/endohizumi/2019-11-25-03-18-53.png)
+![](images/endohizumi/2019-11-25-03-18-53)
 インストール完了後、自動で接続されます。
 表示されたコンソールで、以下のコマンドを実行して、デスクトップ環境をインストールします。
 
@@ -235,13 +235,13 @@ sudo apt-get install lxde
 ```
 
 インストール後、”Sessions”タブに移動し、Ubuntuのセッションを長押しして現れる"Stop Session"で、一旦セッションを終了します。
-![](images/endohizumi/2019-11-25-03-19-32.png)
+![](images/endohizumi/2019-11-25-03-19-32)
 
 終了後、appsタブのUbuntu長押しからのApp Infoをタップして、接続をSSHからVNCに変更します。
-![](images/endohizumi/2019-11-25-02-56-34.png)
+![](images/endohizumi/2019-11-25-02-56-34)
 
 再接続後、デスクトップ画面が現れれば、環境の構築は完了です。
-![](images/endohizumi/2019-11-25-03-20-01.png)
+![](images/endohizumi/2019-11-25-03-20-01)
 
 最初は、スマホの解像度が大きく、文字が小さくなるので、~/.vncrcで、適度な解像度に設定し直してください。
 
