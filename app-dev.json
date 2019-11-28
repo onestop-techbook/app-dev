@@ -22,11 +22,11 @@
   },
   "templates": ["images"],
   "catalog": {
-    "PREDEF": [],
+    "PREDEF": ["preface.re"],
     "CHAPS": [
 
 
     ],
-    "POSTDEF": []
+    "POSTDEF": ["contributors.re", "postscript.re"]
   }
 }
