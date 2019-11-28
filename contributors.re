@@ -16,7 +16,6 @@
 #@# Fhe3QTCf_400x400.jpg    オーニシ
 #@# hoshimad_400x400.jpg    ほしまど
 #@# youchan_400x400.jpg     youchan
-#@# mogya_400x400.png       もぎゃ
 #@#自己紹介ひな形↓
 #@#　←ダミー空白行用の全角スペース（embed内では上方向のスペースが有効にならないため）
 #@#//embed{
@@ -181,7 +180,7 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
 //embed{
     \begin{minipage}{.1\linewidth}
         \centering
-        \includegraphics[width=.75\linewidth]{images/contributors/mogya_400x400.png}
+        \includegraphics[width=.75\linewidth]{images/contributors/mogya_400x400.jpg}
     \end{minipage}
     \begin{minipage}{.89\linewidth}
         もぎゃ @mogya https://twitter.com/mogya\\
