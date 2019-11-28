@@ -26,9 +26,7 @@
     "CHAPS": [
 
       "chap-contents.md",
-      "chap-application.md",
-      "chap-development-environment.md",
-      "chap-handcopy.md"
+      "chap-application.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
