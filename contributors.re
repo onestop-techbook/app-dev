@@ -197,7 +197,7 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
         \includegraphics[width=.75\linewidth]{images/contributors/endohizumi_400x400.png}
     \end{minipage}
     \begin{minipage}{.89\linewidth}
-        遠藤ヒズミ https://twitter.com/endo_hizumi\\
+        遠藤ヒズミ https://twitter.com/endo\_hizumi\\
         \end{minipage}
     \hspace{1ex} 
 //}
