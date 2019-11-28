@@ -42,7 +42,9 @@
       "chap-coding.md",
       "chap-testing.md",
       "chap-tdd-what-is-happy.md",
-      "chap-makesmallappforme.md"
+      "chap-makesmallappforme.md",
+      "chap-handcopy.re",
+      "chap-lets-begin-webplication-with-a-android-device.md"
 
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
