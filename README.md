@@ -105,14 +105,19 @@ https://qiita.com/implicit_none/items/398c6e0bbedc8b160621
 
 Windows10(Home/Pro問わず)であれば、WSL＋docker越しにRe:VIWEを扱う方法もあります。
 <!--
+当方(ほしまど)のQiita記事を案内するか？ https://qiita.com/hoshimado/items/7592cee28c1bde545b78
+-->
+※2019/10/01時点で、次の環境にて後述のdockerコマンドからコンパイル出来ることを確認済み。
 この部分を追記した当方(ほしまど)のQiita記事を案内するか？ https://qiita.com/hoshimado/items/7592cee28c1bde545b78
 -->
 ※2019/11/04時点で、次の環境にて後述のdockerコマンドからコンパイル出来ることを確認済み。
+
 <!-- (3.1指定は、2.x環境と共存のため) -->
 
 * Microsoft Windows 10 Home Version 1903 
 * Ubuntu 16.01
 * Docker version 17.03.2-ce, build f5ec1e2
+* Docker image : vvakame/review (tag:3.1)
 * Docker image : vvakame/review (tag:3.2)
 
 
@@ -121,7 +126,9 @@ Windows10(Home/Pro問わず)であれば、WSL＋docker越しにRe:VIWEを扱う
 Dockerを使うのが一番手軽です。
 
 ```sh
+$ docker run -t --rm -v $(pwd):/book vvakame/review:3.1 /bin/bash -ci "cd /book && yarn && yarn build"
 $ docker run -t --rm -v $(pwd):/book vvakame/review:3.2 /bin/bash -ci "cd /book && yarn && yarn build"
+
 ```
 
 ### Docker使わずビルド

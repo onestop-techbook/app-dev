@@ -191,6 +191,19 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
 
 　
 
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/endohizumi_400x400.png}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        遠藤ヒズミ https://twitter.com/endo_hizumi\\
+        \end{minipage}
+    \hspace{1ex} 
+//}
+都内でPython書いてるSESのWebコーダー。プラモやWebアプリを作ったり、折りたたみタブレットやキーボードつきデバイスを収集する変態ガジェットスキー。手捕り30万欲しい！
+
+
 #@# この上に追記するといい感じになります。明示的な全角空白があるので、忘れずに。
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
