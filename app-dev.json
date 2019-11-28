@@ -28,12 +28,7 @@
       "chap-contents.md",
       "chap-application.md",
       "chap-development-environment.md",
-      "chap-handcopy.md",
-      "chap-technique.md",
-      "chap-coding.md",
-      "chap-testing.md",
-      "chap-tdd-what-is-happy.md",
-      "chap-makesmallappforme.md"
+      "chap-handcopy.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
