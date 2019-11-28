@@ -27,6 +27,6 @@
 
       "chap-application.md"
     ],
-    "POSTDEF": ["contributors.re", "postscript.re"]
+    "POSTDEF": ["postscript.re"]
   }
 }
