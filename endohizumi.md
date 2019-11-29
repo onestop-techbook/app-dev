@@ -154,7 +154,7 @@ $ npm run serve
 動くけどパソコンより遅いなら、実用性がないネタ環境になってしまいます。  
 そこで、PCでもVueCLIを使ったVue.jsの環境を作って、PCとどのくらい差が出るのかについて比較してみました。
 
-![環境ごとの実行速度](images/endohizumi/2019-11-24-01-59-13)
+![](images/endohizumi/2019-11-24-01-59-13)
 
 結果として、デスクトップPCが一位でした。とはいえ、1位のデスクトップはRAM:24GBを乗せたモンスターマシンなので、当然の結果とも言えます。
 注目すべき点は、開発機として標準的なスペックのMacBook AirよりスマホのXperia XZ2 Premiumの方が、ビルド速度が1秒早かったと言う点です。
@@ -194,7 +194,7 @@ Android 5.xから標準で入っている「ファイル」というアプリか
 |~/storage/pictures|/storage/emulated/0/Picture|スクリーンショットなどの画像が保存される|
 |~/storage/music|/storage/emulated/0/Music|音楽が保存される時がある|
 |~/storage/movies|/storage/emulated/0/Movies|動画が保存される時がある|
-|~/storage/external|/storage/<SD>/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
+|~/storage/external|/storage/<SDパス>/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
 
 ## エディターについて
 
