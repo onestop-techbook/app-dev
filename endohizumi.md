@@ -194,7 +194,7 @@ Android 5.xから標準で入っている「ファイル」というアプリか
 |~/storage/pictures|/storage/emulated/0/Picture|スクリーンショットなどの画像|
 |~/storage/music|/storage/emulated/0/Music|音楽が保存される時がある|
 |~/storage/movies|/storage/emulated/0/Movies|動画が保存される時がある|
-|~/storage/external|/storage/<SDパス>/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
+|~/storage/external|/storage/{SD}/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
 
 ## エディターについて
 
