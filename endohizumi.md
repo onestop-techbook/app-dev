@@ -189,12 +189,12 @@ Android 5.xから標準で入っている「ファイル」というアプリか
 | Termux上のパス | Android上のパス | 説明 | 
 | --- | --- | --- |
 |~/storage/shared|/storage/emulated/0/|Androidの内部ストレージのルート|
-|~/storage/downloads|/storage/emulated/0/downloads/|インターネットでダウンロードしたファイルが保存される|
-|~/storage/dcim|/storage/emulated/0/DCIM/|カメラで撮影した画像・動画が保存される|
-|~/storage/pictures|/storage/emulated/0/Picture|スクリーンショットなどの画像が保存される|
+|~/storage/downloads|/storage/emulated/0/downloads/|ダウンロードしたファイル|
+|~/storage/dcim|/storage/emulated/0/DCIM/|カメラで撮影した画像・動画|
+|~/storage/pictures|/storage/emulated/0/Picture|スクリーンショットなどの画像|
 |~/storage/music|/storage/emulated/0/Music|音楽が保存される時がある|
 |~/storage/movies|/storage/emulated/0/Movies|動画が保存される時がある|
-|~/storage/external|/storage/<SDパス>/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
+|~/storage/external|/storage/<SD>/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
 
 ## エディターについて
 
