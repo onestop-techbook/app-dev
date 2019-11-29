@@ -203,6 +203,21 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
 //}
 都内でPython書いてるSESのWebコーダー。プラモやWebアプリを作ったり、折りたたみタブレットやキーボードつきデバイスを収集する変態ガジェットスキー。手捕り30万欲しい！
 
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/tronperidot_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        kaneko @tronperidot https://twitter.com/tronperidot\\
+        \end{minipage}
+    \hspace{1ex} %コメントとアイコンの間を空けて体裁を整える
+//}
+フロントエンドメインのエンジニア。前職SIer時代のPM経験を生かしてwebディレクターや秘書の副業を行ってたりもしてます。
+
+　
 
 #@# この上に追記するといい感じになります。明示的な全角空白があるので、忘れずに。
 
