@@ -44,9 +44,8 @@
       "chap-testing.md",
       "chap-tdd-what-is-happy.md",
       "chap-makesmallappforme.md",
-      "chap-handcopy.md"
-
-
+      "chap-handcopy.md",
+      "endohizumi.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
