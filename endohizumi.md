@@ -194,7 +194,7 @@ Android 5.xから標準で入っている「ファイル」というアプリか
 |~/storage/pictures|/storage/emulated/0/Picture|スクリーンショットなどの画像|
 |~/storage/music|/storage/emulated/0/Music|音楽が保存される時がある|
 |~/storage/movies|/storage/emulated/0/Movies|動画が保存される時がある|
-|~/storage/external|/storage/{SD}/Android/data/com.termux/file|SDカード上のtermux専用ディレクトリ|
+|~/storage/external|/storage/{SD}/Android/data/com.termux/file|SDカード|
 
 ## エディターについて
 
@@ -278,10 +278,10 @@ Bluetoothキーボードやマウスを繋いで、昼休みに机やファレ�
 今回は時間を取ることが難しく作業できないケースに対して、スマホを開発機にすると言うアプローチで問題を解決しました。
 もし、お気に入りのお店や作業時間が確保できるようになったら、パソコンでやってもいいと思います。自分にあった開発スタイルを見つけてみましょう。
 
-## 参考URL
+### 参考URL
 
-[Termux-setup-storage - Termux Wiki](https://wiki.termux.com/wiki/Termux-setup-storage)
-[ホイール欲しい ハンドル欲しい &raquo; ARM CPU 上の開発環境とコンパイル時間の比較](https://wlog.flatlib.jp/item/1844)
-[ホイール欲しい ハンドル欲しい &raquo; Android: UserLAnd + Termux を Note PC 代わりに使う](https://wlog.flatlib.jp/item/1885)
-[linux:userland [HYPERでんち]](https://dench.flatlib.jp/linux/userland)
-[QuickEdit テキストエディター - Google Play のアプリ](https://play.google.com/store/apps/details?id=com.rhmsoft.edit&hl=ja)
+* Termux-setup-storage - Termux Wiki https://wiki.termux.com/wiki/Termux-setup-storage
+* ホイール欲しい ハンドル欲しい >> ARM CPU 上の開発環境とコンパイル時間の比較 https://wlog.flatlib.jp/item/1844
+* ホイール欲しい ハンドル欲しい >> Android: UserLAnd + Termux を Note PC 代わりに使う https://wlog.flatlib.jp/item/1885
+* linux:userland >> HYPERでんち https://dench.flatlib.jp/linux/userland
+* QuickEdit テキストエディター https://play.google.com/store/apps/details?id=com.rhmsoft.edit&hl=ja
