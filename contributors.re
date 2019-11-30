@@ -219,6 +219,21 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
 
 　
 
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/erukiti_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        えるきち @erukiti https://twitter.com/erukiti\\
+        サークル名：東京ラビットハウス https://rabbit-house.tokyo/
+        \end{minipage}
+    \hspace{1ex}
+//}
+締め切りが…。ああ、窓に！窓に！
+
+
 #@# この上に追記するといい感じになります。明示的な全角空白があるので、忘れずに。
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
