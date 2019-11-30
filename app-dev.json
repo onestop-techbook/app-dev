@@ -46,7 +46,7 @@
       "csprograming.re",
       "chap-simulationapp.re",
       "chap-capistrano.md",
-      "chap-develoment-web-app-with-a-androd-device.md"
+      "endohizumi.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }
