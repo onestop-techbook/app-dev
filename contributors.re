@@ -62,7 +62,7 @@
         \end{minipage}
     \hspace{1ex}
 //}
-SIerからWeb系に転職し、いまはスマホアプリの開発をしているITエンジニア。Twitter、ブログ、Podcast配信、数多くの趣味と楽しく活動中。今回は自分の経験を通して、目標設定について必須なのかどうかを考えてみました。
+BtoB向けSaaSのバックエンド開発をしているITエンジニア。Twitter、ブログ、Podcast配信、数多くの趣味と楽しく活動中。今回は自分の中のアジャイルに対する考えかたをアウトプットしてみました。
 
 　
 
@@ -199,7 +199,7 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
     \begin{minipage}{.89\linewidth}
         遠藤ヒズミ https://twitter.com/endo\_hizumi\\
         \end{minipage}
-    \hspace{1ex} 
+    \hspace{1ex}
 //}
 都内でPython書いてるSESのWebコーダー。プラモやWebアプリを作ったり、折りたたみタブレットやキーボードつきデバイスを収集する変態ガジェットスキー。手捕り30万欲しい！
 
