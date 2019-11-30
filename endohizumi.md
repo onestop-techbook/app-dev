@@ -284,4 +284,4 @@ Bluetoothキーボードやマウスを繋いで、昼休みに机やファレ�
 * ホイール欲しい ハンドル欲しい >> ARM CPU 上の開発環境とコンパイル時間の比較 https://wlog.flatlib.jp/item/1844
 * ホイール欲しい ハンドル欲しい >> Android: UserLAnd + Termux を Note PC 代わりに使う https://wlog.flatlib.jp/item/1885
 * linux:userland >> HYPERでんち https://dench.flatlib.jp/linux/userland
-* QuickEdit テキストエディター https://play.google.com/store/apps/details?id=com.rhmsoft.edit&hl=ja
+* QuickEdit テキストエディター https://play.google.com/ にて検索を。
