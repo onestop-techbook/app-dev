@@ -4,3 +4,4 @@ yarn-*.log
 npm-*.log
 yarn.lock
 package-lock.json
+*.lnk
