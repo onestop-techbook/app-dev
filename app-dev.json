@@ -25,27 +25,31 @@
     "PREDEF": ["preface.re"],
     "CHAPS": [
       "chap-contents.md",
-      "csprograming.re",
+      "chap-application.md",
+      "chap-basic-file.md",
+      "chap-basic-naming.md",
+      "chap-basic-git.md",
+      "chap-development-environment.md",
+      "chap-handcopy.md",
       "chap-make-easy.md",
-      "chap-ui-design.md",
-      "chap-software-design.md",
-      "chap-deploy.md",
-      "chap-team-development.md",
-      "chap-agile.md",
-      "chap-requirements.md",
-      "chap-simulationapp.re",
-    
-      "placeholder.md",
-      "chap-capistrano.md",
-      "chap-security.md",
+      "chap-makesmallappforme.md",
       "chap-technique.md",
+      "chap-ui-design.md",
       "chap-coding.md",
       "chap-testing.md",
       "chap-tdd-what-is-happy.md",
-      "chap-makesmallappforme.md",
-      "chap-handcopy.md"
+      "chap-deploy.md",
+      "chap-requirements.md",
+      "chap-team-development.md",
+      "chap-software-design.md",
+      "chap-agile.md",
+      "chap-security.md",
+      "placeholder.md",
 
-
+      "csprograming.re",
+      "chap-simulationapp.re",
+      "chap-capistrano.md",
+      "endohizumi.md"
     ],
     "POSTDEF": ["contributors.re", "postscript.re"]
   }

@@ -45,7 +45,7 @@
         \end{minipage}
     \hspace{1ex}
 //}
-普段は「レーザープロジェクタを自作するためのいろいろ」というあたりのネタで執筆中。コミケと技術書典に出没。デッドライナーだけど、最近締め切りをでっち上げて自分の尻を叩く方法を学んだので、コンスタントに本が書けるようになった。プログラミングは苦手。しめきりたのしー。ワンストップ本1こと、技術同人誌を書こうが商業化したり、錬金ラボをみんなで作ったり、楽しすぎる毎日です。とりあえずのテスト
+ワンストップ本シリーズ企画・編集（一部執筆）してます。コミケと技術書典に出没。ついに技術書同人誌博覧会（技書博）のコアスタッフとして運営側に参加。技術書イベントが増えて嬉しいけれど、イベント多すぎて外出チケットと徳が不足気味。徳を貯めるべく、家事をこなしつつ、ラボに遊びに行ったり、飲み会や懇親会で著者を新規開拓したり。著者募集はいつでもやってまうすので、ぜひご参加ください。
 
 == 執筆者
 
@@ -62,7 +62,7 @@
         \end{minipage}
     \hspace{1ex}
 //}
-SIerからWeb系に転職し、いまはスマホアプリの開発をしているITエンジニア。Twitter、ブログ、Podcast配信、数多くの趣味と楽しく活動中。今回は自分の経験を通して、目標設定について必須なのかどうかを考えてみました。
+BtoB向けSaaSのバックエンド開発をしているITエンジニア。Twitter、ブログ、Podcast配信、数多くの趣味と楽しく活動中。今回は自分の中のアジャイルに対する考えかたをアウトプットしてみました。
 
 　
 
@@ -199,10 +199,55 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
     \begin{minipage}{.89\linewidth}
         遠藤ヒズミ https://twitter.com/endo\_hizumi\\
         \end{minipage}
-    \hspace{1ex} 
+    \hspace{1ex}
 //}
 都内でPython書いてるSESのWebコーダー。プラモやWebアプリを作ったり、折りたたみタブレットやキーボードつきデバイスを収集する変態ガジェットスキー。手捕り30万欲しい！
 
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/tronperidot_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        kaneko @tronperidot https://twitter.com/tronperidot\\
+        \end{minipage}
+    \hspace{1ex} %コメントとアイコンの間を空けて体裁を整える
+//}
+フロントエンドメインのエンジニア。前職SIer時代のPM経験を生かしてwebディレクターや秘書の副業を行ってたりもしてます。
+
+　
+
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/erukiti_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        えるきち @erukiti https://twitter.com/erukiti\\
+        サークル名：東京ラビットハウス https://rabbit-house.tokyo/
+        \end{minipage}
+    \hspace{1ex}
+//}
+締め切りが…。ああ、窓に！窓に！
+
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/miriwo_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        miriwo(みりを) @mirimiripc https://twitter.com/mirimiripc
+        \end{minipage}
+    \hspace{1ex}
+//}
+初めての技術同人誌を書かせていただきました。
+2019年7月7日からQiitaを毎日投稿中！(2019年12月1日現在)
+Webエンジニアを目指して奮闘中！楽しくて仕方がないことをお仕事にしたい！
 
 #@# この上に追記するといい感じになります。明示的な全角空白があるので、忘れずに。
 
