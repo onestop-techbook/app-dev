@@ -135,7 +135,7 @@ $ vue create my-project
 
 プロジェクトの作成が終了したら、以下のメッセージが表示されます。  
 後は、画面にしたがって、ディレクトリを移動、開発用サーバーを実行します。  
-![vueプロジェクト起動]]](images/endohizumi/2019-11-24-01-36-36)
+![vueプロジェクト起動](images/endohizumi/2019-11-24-01-36-36)
 
 ```bash
 $ cd my-project
