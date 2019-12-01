@@ -26,6 +26,9 @@
     "CHAPS": [
       "chap-contents.md",
       "chap-application.md",
+      "chap-basic-file.md",
+      "chap-basic-naming.md",
+      "chap-basic-git.md",
       "chap-development-environment.md",
       "chap-handcopy.md",
       "chap-make-easy.md",
