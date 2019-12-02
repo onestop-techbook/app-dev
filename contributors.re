@@ -249,6 +249,23 @@ Node.jsの手軽さが好きな、日曜プログラマー。「こんなツー�
 2019年7月7日からQiitaを毎日投稿中！(2019年12月1日現在)
 Webエンジニアを目指して奮闘中！楽しくて仕方がないことをお仕事にしたい！
 
+　
+
+//embed{
+    \begin{minipage}{.1\linewidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{images/contributors/RkmwJH1I_400x400.jpg}
+    \end{minipage}
+    \begin{minipage}{.89\linewidth}
+        湊川あい @llminatoll https://twitter.com/llminatoll\\
+        サークル名：湊川あいの、わかば家。 https://note.com/llminatoll
+        \end{minipage}
+    \hspace{1ex}
+//}
+前回に引き続き、表紙イラストで参加させていただきました。親方さんアイデアの「スリッパを持ってバグを追い回すワンストップちゃん」を描くのが楽しかったです。
+
+　
+
 #@# この上に追記するといい感じになります。明示的な全角空白があるので、忘れずに。
 
 #@#改行されない，hspace効かない，@<br>{}ではエラーがでるので，全角スペースで空の行を入れている
