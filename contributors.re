@@ -9,7 +9,7 @@
 #@# mIiEPqG9_400x400.jpg    病葉
 #@# mUB3SJSi_400x400.jpg    Yuki Ichonomiya
 #@# NqlbbcCl_400x400.jpg    カウプラン機間極東支部
-#@# RkmwJH1I_400x400.jpg    湊川あい
+#@# llminatoll_400x400.jpg    湊川あい
 #@# wQsdxU4b_400x400.jpg    なかひこくん
 #@# KJuhmDlA_400x400.png    ariaki
 #@# __aizack_400x400.jpg    Aizack
@@ -255,7 +255,7 @@ Webエンジニアを目指して奮闘中！楽しくて仕方がないこと�
 //embed{
     \begin{minipage}{.1\linewidth}
         \centering
-        \includegraphics[width=.75\linewidth]{images/contributors/RkmwJH1I_400x400.jpg}
+        \includegraphics[width=.75\linewidth]{images/contributors/llminatoll_400x400.jpg}
     \end{minipage}
     \begin{minipage}{.89\linewidth}
         湊川あい @llminatoll https://twitter.com/llminatoll\\
