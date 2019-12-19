@@ -56,19 +56,22 @@
 
 == 開発環境「我は犬の神、ここに犬の世界を造らん！」
 犬をパソコンで飼育するには、アプリケーションを作る必要があります。
-
-
 [Figure : G-Dog use stick and create space]
 
 == 言語等「ここに犬の世界の秩序を定める！」
 [Figure : G-Dog use stick and light spread]
+
 == ウィンドウを表示しよう「ここは始まりの大地、お犬王国発祥の地」
 [Figure : G-Dog use stick and raise the land]
+
 == ボタンを配置しよう「お手！」（しーん…）
 [Figure : You ”Hey” vs Dog “...”]
+
 == コマンドとバインディング 「お手！」「ワン！」
 [Figure : You ”Hey” vs Dog “Bow!”]
+
 == 一覧の表示「みんな並んで！」
 [Figure : Dogs wait in line]
+
 == 継承とポリモーフィズム「犬種という概念を与えよう！」
 [Figure : Dog include Canis Lupus, Bulldog and Kuvasz]
