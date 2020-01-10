@@ -102,10 +102,10 @@ HTML/CSS はある程度書ける人です。ある程度です。すごく素�
     上で決めた日本語。日本語だけではイマイチわからない部分も多いです。  
     できれば下手でもいいので図説してみるといいと思います。  
 
-<!-- ![私が書いたラフ画](/images/fan01.jpg] "ipadで書いたラフな設計図") -->
-<div style="text-align:center;">
-<img src="./images/chap-myFirstAppStory/fan01.png" width="300px" height="auto">
-</div>
+![私が書いたラフ画](fan01) 
+
+
+
 
  こんな感じに書いてみるといいんじゃないかと思います！  
  私は書いたほうが分かりやすかったです。  
@@ -149,10 +149,8 @@ HTML/CSS はある程度書ける人です。ある程度です。すごく素�
     ここまでできたら…プロトタイプを作りましょう。  
     処女作ジャンケンアプリでは無計画に作成したので、随分アレな UI でしたがその反省を活かして、Adobe XD というソフトでそれっぽい UI を製作してみました。
 
-<!-- ![XDで作成したモック](/images/fan02.png "XDで製作したモック") -->
-<div style="text-align:center;">
-<img src="./images/chap-myFirstAppStory/fan02.png" width="250px" height="auto">
-</div>
+![XDで作成したモック](fan02)
+
 
 1.  HTML/CSS でプロトタイプを再現してみよう  
 
@@ -161,10 +159,8 @@ HTML/CSS はある程度書ける人です。ある程度です。すごく素�
 
 ということで、実際にできた画面がこちらです。
 
-<!-- ![実際に組んだ画面](/images/fan03.png "HTML/CSSで組んでみた画面") -->
-<div style="text-align:center;">
-<img src="./images/chap-myFirstAppStory/fan03.png" width="250px" height="auto">
-</div>
+![実際に組んだ画面](fan03)
+
 1. JS を使って実際のゲームの部分を作ってみよう
 
    ５まではなんとなくできちゃうのですが、6 からが本当に初めてだったので本当に苦労しました。VSCode 開いたまま 1 時間立っても何も思い浮かばないのでどうしよう…とコーチに相談しました。  
