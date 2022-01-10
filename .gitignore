@@ -5,3 +5,4 @@ npm-*.log
 yarn.lock
 package-lock.json
 *.lnk
+.vscode
